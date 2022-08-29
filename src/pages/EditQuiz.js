@@ -56,7 +56,6 @@ export default function EditQuiz() {
         category: category,
         author: author,
         comment: comment,
-        rating: rating,
         answer: answer,
       });
 
@@ -218,7 +217,7 @@ export default function EditQuiz() {
                 <option value="Geography">Geography</option>
               </Select>
             </div>
-            <div className="col-span-12 sm:col-span-5 sm:pb-8 sm:border-b sm:border-b-primary-100">
+            {/* <div className="col-span-12 sm:col-span-5 sm:pb-8 sm:border-b sm:border-b-primary-100">
               <label className="">Rating</label>
               <p className="mt-2 text-xs text-white text-opacity-50">
                 Select the rating and enter comment
@@ -240,7 +239,7 @@ export default function EditQuiz() {
                   setComment(e.target.value);
                 }}
               />
-            </div>
+            </div> */}
             <div className="col-span-12 sm:col-span-5 sm:pb-8 sm:border-b sm:border-b-primary-100">
               <label className="">Answer</label>
               <p className="mt-2 text-xs text-white text-opacity-50">
