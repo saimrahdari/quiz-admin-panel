@@ -245,7 +245,7 @@ export default function Users() {
                         ? setSelectedItem(null)
                         : setSelectedItem(user);
                     }}
-                    className="col-span-2 text-center"
+                    className="col-span-1 flex justify-center"
                   >
                     <DropdownB id={user.id} selectedItem={selectedItem}>
                       <div
@@ -277,6 +277,7 @@ export default function Users() {
                             doc(collection(db, "users"), user.id)
                           );
                           updateCheck(); 
+                          navigate("/users");
                         }}
                         className="flex gap-3 hover:bg-primary-200"
                       >
