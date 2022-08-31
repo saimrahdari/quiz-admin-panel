@@ -141,7 +141,7 @@ export default function AddQuiz() {
               Questions:
             </div>
             <div className="col-span-2 pl-4">
-                <div onClick={addField} className="w-full flex items-center justify-center lg:justify-between px-3 bg-purple-600 h-11 rounded-md cursor-pointer">
+                <div onClick={addField} className="w-full flex items-center justify-center lg:justify-between px-3 bg-secondary-300 h-11 rounded-md cursor-pointer">
                   <p className="text-sm hidden lg:inline" >Add Question</p>
                   <svg
                     className="w-4 h-4 text-white"
