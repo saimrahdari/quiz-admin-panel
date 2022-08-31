@@ -15,7 +15,7 @@ import convertDate from "../utility/convertDate";
 import InputFile from "../components/UI/InputFile";
 
 export default function EditNews() {
-  const { selectedItemToEdit, updateCheck } = useStateContext();
+  const { selectedItemToEdit, newsCategories, updateCheck } = useStateContext();
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
   const [filterValue, setFilterValue] = useState("");
@@ -64,7 +64,7 @@ export default function EditNews() {
       <section>
         <div className="mt-6 sm:mt-0 text-end">
           <form className="pl-10 relative flex items-center md:flex-row w-full sm:w-fit md:space-x-3 md:space-y-0 ">
-          <svg
+            <svg
               className="object-contain w-4 h-4 text-inherit "
               width="19"
               height="19"
@@ -171,9 +171,12 @@ export default function EditNews() {
                   setCategory(e.target.value);
                 }}
               >
-                <option value="Entertainment">Entertainment</option>
-                <option value="General">General</option>
-                <option value="Politics">Politics</option>
+                <option value="" selected>
+                  Select Category
+                </option>
+                {newsCategories.map((category) => (
+                  <option value={category.name}>{category.name}</option>
+                ))}
               </Select>
             </div>
             <div className="col-span-12 sm:col-span-5 sm:pb-8 sm:border-b sm:border-b-primary-100">
@@ -227,7 +230,7 @@ export default function EditNews() {
             </button>
           </div>
         </div>
-       
+
         <div className="flex xl:hidden mt-16 mb-8 gap-8">
           <button
             type="button"
