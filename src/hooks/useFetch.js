@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, query, orderBy } from "firebase/firestore";
 import { db } from "../firebase-config";
 
 const useFetch = (collectionName, check) => {
@@ -9,11 +9,12 @@ const useFetch = (collectionName, check) => {
 
   useEffect(() => {
     const collectionRef = collection(db, collectionName);
+    const q = query(collectionRef, orderBy("date", 'desc'));
 
     const fetchData = async () => {
       setIsloading(true);
       try {
-        const fetchedData = await getDocs(collectionRef);
+        const fetchedData = await getDocs(q);
         setData(fetchedData.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
         setIsloading(false);
       } catch (error) {
@@ -24,7 +25,7 @@ const useFetch = (collectionName, check) => {
     };
 
     fetchData();
-  },[check]);
+  }, [check]);
 
   return { data, isloading, errorMessage };
 };
