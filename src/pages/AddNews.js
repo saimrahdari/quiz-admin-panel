@@ -49,7 +49,7 @@ export default function AddNews() {
         category: category,
         author: author,
         newsDate: Timestamp.fromDate(new Date(date)),
-        date: new Date(),
+        date: Timestamp.fromDate(new Date(date)),
       });
       updateCheck();
       setShowModal(true);
