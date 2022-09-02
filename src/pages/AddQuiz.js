@@ -83,7 +83,6 @@ export default function AddQuiz() {
         author: author,
         comment: comment,
         rating: 0,
-        answer: answer,
         date: new Date(),
       });
       console.log("rases",res)
@@ -242,7 +241,7 @@ export default function AddQuiz() {
                 ))}
               </Select>
             </div>
-            <div className="col-span-12 sm:col-span-5 sm:pb-8 sm:border-b sm:border-b-primary-100">
+            {/* <div className="col-span-12 sm:col-span-5 sm:pb-8 sm:border-b sm:border-b-primary-100">
               <label className="">Answer</label>
               <p className="mt-2 text-xs text-white text-opacity-50">
                 Choose the right answer
@@ -266,7 +265,7 @@ export default function AddQuiz() {
                   False
                 </option>
               </Select>
-            </div>
+            </div> */}
           </div>
           <div className="hidden xl:flex mt-16 mb-8 gap-8">
             <button
