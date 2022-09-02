@@ -24,13 +24,13 @@
   },
   "homepage": "https://logo-2d6da.web.app",
   "scripts": {
-    "dev": "react-scripts start",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "dev": "node api.js && react-scripts start",
+    "start": "node api.js && react-scripts start",
+    "build": "node api.js && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm run build"
-    },
+  },
   "eslintConfig": {
     "extends": [
       "react-app",
